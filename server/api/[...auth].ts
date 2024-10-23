@@ -1,0 +1,1 @@
+export default eventHandler((event) => hubAuth().handler(toWebRequest(event)))
