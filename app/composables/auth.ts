@@ -13,6 +13,9 @@ export function useAuth() {
   const headers = import.meta.server ? useRequestHeaders() : undefined
   const client = createAuthClient({
     baseURL: url.origin,
+    fetchOptions: {
+      credentials: import.meta.client ? 'include' : undefined,
+    },
   })
   const session = useState<InferSessionFromClient<ClientOptions> | null>('auth:session', () => null)
   const user = useState<InferUserFromClient<ClientOptions> | null>('auth:user', () => null)
