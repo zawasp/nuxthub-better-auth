@@ -1,11 +1,11 @@
 import { defu } from 'defu'
 import { createAuthClient } from 'better-auth/client'
 import type { InferSessionFromClient, InferUserFromClient, ClientOptions } from 'better-auth/client'
-import type { RouteLocation } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 interface RuntimeAuthConfig {
-  redirectUserTo: RouteLocation | string
-  redirectGuestTo: RouteLocation | string
+  redirectUserTo: RouteLocationRaw | string
+  redirectGuestTo: RouteLocationRaw | string
 }
 
 export function useAuth() {
@@ -26,8 +26,9 @@ export function useAuth() {
     user,
     loggedIn: computed(() => !!session.value),
     signIn: client.signIn,
+    signUp: client.signUp,
     options,
-    async signOut({ redirectTo }: { redirectTo?: RouteLocation } = {}) {
+    async signOut({ redirectTo }: { redirectTo?: RouteLocationRaw } = {}) {
       const res = await client.signOut()
       session.value = null
       user.value = null

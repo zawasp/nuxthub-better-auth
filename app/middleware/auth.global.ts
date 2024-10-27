@@ -1,5 +1,5 @@
 import { defu } from 'defu'
-import type { RouteLocation } from 'vue-router'
+import type { RouteLocationRaw } from 'vue-router'
 
 type MiddlewareOptions = false | {
   /**
@@ -9,11 +9,11 @@ type MiddlewareOptions = false | {
   /**
    * Redirect authenticated user to this route
    */
-  redirectUserTo?: RouteLocation
+  redirectUserTo?: RouteLocationRaw
   /**
    * Redirect guest to this route
    */
-  redirectGuestTo?: RouteLocation
+  redirectGuestTo?: RouteLocationRaw
 }
 
 declare module '#app' {

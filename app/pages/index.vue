@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 definePageMeta({
   auth: {
     only: 'guest',
@@ -20,7 +20,6 @@ const tabs = [{
 const email = ref('')
 const password = ref('')
 const name = ref('')
-const image = ref < File | null > (null)
 const loading = ref(false)
 
 async function signIn() {
@@ -51,7 +50,6 @@ async function signUp() {
     email: email.value,
     password: password.value,
     name: name.value,
-    image: image.value?.readAsDataURL(),
   })
   if (error) {
     toast.add({
@@ -102,9 +100,6 @@ async function signUp() {
           </UFormGroup>
           <UFormGroup label="Name">
             <UInput v-model="name" type="name" placeholder="Name" />
-          </UFormGroup>
-          <UFormGroup label="Avatar">
-            <UInput type="file" @change="image = $event.target.files?.[0]" />
           </UFormGroup>
           <UButton type="submit" color="black" :loading="loading">
             Sign Up
