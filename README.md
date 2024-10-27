@@ -15,6 +15,10 @@ https://hello.nuxt.dev
 - Ready to add a database, blob and KV storage
 - One click deploy on 275+ locations for free
 
+## TODO
+
+- [ ] Refresh session on signin / signup
+
 ## Setup
 
 Make sure to install the dependencies with [pnpm](https://pnpm.io/installation#using-corepack):
