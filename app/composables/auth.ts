@@ -39,7 +39,7 @@ export function useAuth() {
       const { data } = await client.getSession({
         fetchOptions: {
           headers,
-          credentials: import.meta.client ? 'include' : 'omit',
+          credentials: import.meta.client ? 'include' : undefined,
         },
       })
       session.value = data?.session || null
