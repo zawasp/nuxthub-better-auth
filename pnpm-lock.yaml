@@ -27,8 +27,8 @@ importers:
         specifier: ^0.8.2
         version: 0.8.2(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.24.0)(vite@5.4.8(@types/node@22.7.5)(terser@5.34.1))(webpack-sources@3.2.3)
       better-auth:
-        specifier: 0.6.2-beta.2
-        version: 0.6.2-beta.2(@vue/devtools-api@6.6.4)(encoding@0.1.13)(react@18.3.1)(solid-js@1.9.2)(vue@3.5.12(typescript@5.6.3))
+        specifier: 0.6.2-beta.1
+        version: 0.6.2-beta.1(@vue/devtools-api@6.6.4)(encoding@0.1.13)(react@18.3.1)(solid-js@1.9.2)(vue@3.5.12(typescript@5.6.3))
       drizzle-orm:
         specifier: ^0.35.3
         version: 0.35.3(@cloudflare/workers-types@4.20241022.0)(@libsql/client-wasm@0.14.0)(@prisma/client@5.21.0(prisma@5.21.0))(@types/better-sqlite3@7.6.11)(better-sqlite3@11.3.0)(kysely@0.27.4)(prisma@5.21.0)(react@18.3.1)
@@ -2206,8 +2206,8 @@ packages:
   better-auth@0.6.1-beta.7:
     resolution: {integrity: sha512-tIkLiQvbIgR1Ai2g8OO0ZooOGFHZ7aaVLA37GEYdF/Jasws1Aq6PB9pMVPd6utSUobsQje3vCuKdwYpFN3eytA==}
 
-  better-auth@0.6.2-beta.2:
-    resolution: {integrity: sha512-GKYhMGyJ4o90QEFRy1nzFcbCEfFMgBAOCbyJ/+gLTlFysnrkNTnCOOa5UKj9jCv50IMG4pQCZJkeHWsOP/6qDA==}
+  better-auth@0.6.2-beta.1:
+    resolution: {integrity: sha512-wxSC5rD+PzCCJ3/Q98R9Lw0yROg7gFG4Qh81Mr1z41KHd2JDXu30fJvUU6n4rgEnV9Eq99JX801tEjVj9+fJyQ==}
 
   better-call@0.2.12:
     resolution: {integrity: sha512-xuR4hJEtirZYI4UXOEVKaipghWcxxo4/tW3FUTIXIIG1X9nb2V/VH4HZP7fuD7ONHoNntwtPIurDNeK/SswxgA==}
@@ -7947,7 +7947,7 @@ snapshots:
       - solid-js
       - vue
 
-  better-auth@0.6.2-beta.2(@vue/devtools-api@6.6.4)(encoding@0.1.13)(react@18.3.1)(solid-js@1.9.2)(vue@3.5.12(typescript@5.6.3)):
+  better-auth@0.6.2-beta.1(@vue/devtools-api@6.6.4)(encoding@0.1.13)(react@18.3.1)(solid-js@1.9.2)(vue@3.5.12(typescript@5.6.3)):
     dependencies:
       '@better-fetch/fetch': 1.1.12
       '@nanostores/query': 0.3.4(nanostores@0.11.3)

@@ -10,7 +10,6 @@ interface RuntimeAuthConfig {
 
 export function useAuth() {
   const url = useRequestURL()
-  const headers = import.meta.server ? useRequestHeaders() : undefined
   const client = createAuthClient({
     baseURL: url.origin,
   })
@@ -36,11 +35,16 @@ export function useAuth() {
       return res
     },
     async fetchSession() {
-      const { data } = await client.getSession({
-        fetchOptions: {
-          headers,
+      interface Response {
+        session: InferSessionFromClient<ClientOptions> | null
+        user: InferUserFromClient<ClientOptions> | null
+      }
+      const data = await useRequestFetch()<Response>('/api/auth/get-session', {
+        headers: {
+          Accept: 'text/json',
         },
-      })
+        retry: false,
+      }).catch(() => {})
       session.value = data?.session || null
       user.value = data?.user || null
       return data
