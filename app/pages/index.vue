@@ -1,12 +1,11 @@
 <script setup>
-const session = auth.useSession()
-
-watch(() => session.value.data, (data) => {
-  if (data) {
-    navigateTo('/user')
-  }
+definePageMeta({
+  auth: {
+    only: 'guest',
+    redirectUserTo: '/user',
+  },
 })
-
+const auth = useAuth()
 const toast = useToast()
 const tabs = [{
   slot: 'signin',

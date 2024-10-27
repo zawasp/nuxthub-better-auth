@@ -1,8 +1,18 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // https://nuxt.com/modules
+  extends: '@nuxt/ui-pro',
   modules: ['@nuxthub/core', '@nuxt/eslint', '@nuxt/ui'],
   devtools: { enabled: true },
+
+  runtimeConfig: {
+    public: {
+      auth: {
+        redirectUserTo: '/user',
+        redirectGuestTo: '/',
+      },
+    },
+  },
 
   future: { compatibilityVersion: 4 },
   compatibilityDate: '2024-07-30',
