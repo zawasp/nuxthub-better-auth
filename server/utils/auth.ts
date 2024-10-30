@@ -21,7 +21,9 @@ export function hubAuth() {
       },
       secondaryStorage: {
         get: key => hubKV().getItemRaw(`_auth:${key}`),
-        set: (key, value, ttl) => hubKV().set(`_auth:${key}`, value, { ttl }),
+        set: (key, value, ttl) => {
+          return hubKV().set(`_auth:${key}`, value, { ttl })
+        },
         delete: key => hubKV().del(`_auth:${key}`),
       },
       baseURL,
@@ -35,6 +37,12 @@ export function hubAuth() {
         },
       },
       plugins: [anonymous(), admin()],
+      // session: {
+      //   cookieCache: {
+      //     enabled: true,
+      //     maxAge: 5 * 60, // Cache duration in seconds
+      //   },
+      // },
     })
   }
   return _auth
