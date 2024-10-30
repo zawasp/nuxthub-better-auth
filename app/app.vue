@@ -1,4 +1,5 @@
 <script setup>
+const { signOut, loggedIn } = useAuth()
 const links = [
   {
     label: 'Home',
@@ -22,7 +23,13 @@ const links = [
 <template>
   <NuxtRouteAnnouncer />
   <NuxtLoadingIndicator />
-  <UHeader title="NuxtHub x BetterAuth" :links="links" />
+  <UHeader title="NuxtHub x BetterAuth" :links="links">
+    <template #right>
+      <UButton v-if="loggedIn" color="black" @click="signOut({ redirectTo: '/' })">
+        Sign Out
+      </UButton>
+    </template>
+  </UHeader>
   <UContainer>
     <UMain>
       <NuxtPage />

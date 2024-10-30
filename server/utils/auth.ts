@@ -36,6 +36,11 @@ export function hubAuth() {
           clientSecret: process.env.GITHUB_CLIENT_SECRET!,
         },
       },
+      account: {
+        accountLinking: {
+          enabled: true,
+        },
+      },
       plugins: [anonymous(), admin()],
       // session: {
       //   cookieCache: {

@@ -18,6 +18,9 @@ export function useAuth() {
 
   const client = createAuthClient({
     baseURL: url.origin,
+    fetchOptions: {
+      headers,
+    },
   })
 
   const options = defu(useRuntimeConfig().public.auth as Partial<RuntimeAuthConfig>, {
