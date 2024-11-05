@@ -4,6 +4,8 @@ A demo of using [BetterAuth](https://better-auth.com) with [NuxtHub](https://hub
 
 https://better-auth.nuxt.dev
 
+[![Deploy to NuxtHub](https://hub.nuxt.com/button.svg)](https://admin.hub.nuxt.com/new?repo=atinux/nuxthub-better-auth)
+
 ## Features
 
 - Server-Side rendering on Cloudflare Workers
