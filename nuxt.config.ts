@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   // https://nuxt.com/modules
   extends: '@nuxt/ui-pro',
-  modules: ['@nuxthub/core', '@nuxt/eslint', '@nuxt/ui'],
+  modules: ['@nuxthub/core', '@nuxt/ui', '@nuxt/eslint'],
   devtools: { enabled: true },
 
   runtimeConfig: {

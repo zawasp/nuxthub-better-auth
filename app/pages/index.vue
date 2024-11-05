@@ -69,8 +69,8 @@ async function signUp() {
 </script>
 
 <template>
-  <div class="centered">
-    <UTabs :items="tabs">
+  <UPageBody>
+    <UTabs :items="tabs" class="max-w-md mx-auto">
       <template #signin>
         <form class="flex flex-col gap-4" @submit.prevent="signIn">
           <UFormGroup label="Email" required>
@@ -115,30 +115,5 @@ async function signUp() {
         </form>
       </template>
     </UTabs>
-  </div>
+  </UPageBody>
 </template>
-
-<style scoped>
-.centered {
-  padding-top: 100px;
-  width: 400px;
-  margin: 0 auto;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-h1 {
-  font-size: 32px;
-}
-@media (min-width: 768px) {
-  h1 {
-    font-size: 64px;
-  }
-}
-a {
-  color: #888;
-  text-decoration: none;
-  font-size: 18px;
-}
-a:hover {
-  text-decoration: underline;
-}
-</style>
