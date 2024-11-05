@@ -79,9 +79,15 @@ async function signUp() {
           <UFormGroup label="Password" requiredrequired>
             <UInput v-model="password" type="password" placeholder="Password" />
           </UFormGroup>
-          <UButton type="submit" color="black" :loading="loading">
+          <UButton
+            type="submit"
+            color="black"
+            :loading="loading"
+            :disabled="!email || !password"
+          >
             Sign In
           </UButton>
+          <UDivider label="or" />
           <UButton
             icon="i-simple-icons-github"
             type="button"
