@@ -31,7 +31,7 @@ const footerLinks = [
   },
   {
     label: 'Better Auth',
-    to: 'https://better-auth.nuxt.com',
+    to: 'https://better-auth.com',
     target: '_blank',
   },
   {
