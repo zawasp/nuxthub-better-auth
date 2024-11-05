@@ -1,6 +1,6 @@
 # NuxtHub x BetterAuth
 
-A demo of using [NuxtHub](https://hub.nuxt.com) (Cloudflare Workers) with [BetterAuth](https://better-auth.com).
+A demo of using [BetterAuth](https://better-auth.com) with [NuxtHub](https://hub.nuxt.com) (Cloudflare Pages with D1 & KV).
 
 https://better-auth.nuxt.dev
 
