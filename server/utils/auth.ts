@@ -3,14 +3,7 @@ import { D1Dialect } from '@atinux/kysely-d1'
 import { anonymous, admin } from 'better-auth/plugins'
 
 let _auth: ReturnType<typeof betterAuth>
-export function hubAuth() {
-  let baseURL = process.env.BETTER_AUTH_URL
-  if (!baseURL) {
-    try {
-      baseURL = getRequestURL(useEvent()).origin
-    }
-    catch (e) {}
-  }
+export function serverAuth() {
   if (!_auth) {
     _auth = betterAuth({
       database: {
@@ -26,7 +19,7 @@ export function hubAuth() {
         },
         delete: key => hubKV().del(`_auth:${key}`),
       },
-      baseURL,
+      baseURL: getBaseURL(),
       emailAndPassword: {
         enabled: true,
       },
@@ -42,13 +35,18 @@ export function hubAuth() {
         },
       },
       plugins: [anonymous(), admin()],
-      // session: {
-      //   cookieCache: {
-      //     enabled: true,
-      //     maxAge: 5 * 60, // Cache duration in seconds
-      //   },
-      // },
     })
   }
   return _auth
+}
+
+function getBaseURL() {
+  let baseURL = process.env.BETTER_AUTH_URL
+  if (!baseURL) {
+    try {
+      baseURL = getRequestURL(useEvent()).origin
+    }
+    catch (e) {}
+  }
+  return baseURL
 }

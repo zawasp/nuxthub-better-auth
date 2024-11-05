@@ -1,11 +1,21 @@
 <script setup lang="ts">
 // https://better-auth.vercel.app/docs/integrations/nuxt#ssr-usage
 const { user, session, client } = useAuth()
+const toast = useToast()
 const { data: accounts } = await useAsyncData('accounts', () => client.listAccounts())
 
 function hasProvider(provider: string) {
   return accounts.value?.data?.some(account => account.providerId === provider)
 }
+const error = useRoute().query?.error
+onMounted(() => {
+  if (error) {
+    toast.add({
+      color: 'red',
+      title: error,
+    })
+  }
+})
 </script>
 
 <template>

@@ -1,1 +1,1 @@
-export default eventHandler((event) => hubAuth().handler(toWebRequest(event)))
+export default eventHandler(event => serverAuth().handler(toWebRequest(event)))

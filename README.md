@@ -1,23 +1,17 @@
-# Hello Edge
+# NuxtHub x BetterAuth
 
-A minimal [Nuxt](https://nuxt.com) starter deployed on the Edge using [NuxtHub](https://hub.nuxt.com).
+A demo of using [NuxtHub](https://hub.nuxt.com) with [BetterAuth](https://better-auth.com).
 
-https://hello.nuxt.dev
-
-<a href="https://hello.nuxt.dev">
-<img src="https://github.com/nuxt-hub/hello-edge/assets/904724/99d1bd54-ef7e-4ac9-83ad-0a290f85edcf" alt="Hello World template for NuxtHub" />
-</a>
+https://better-auth.nuxt.dev
 
 ## Features
 
 - Server-Side rendering on Cloudflare Workers
-- ESLint setup
-- Ready to add a database, blob and KV storage
+- [SQL Database](https://hub.nuxt.com/docs/features/database) on the edge
+- Use [Key Value Storage](https://hub.nuxt.com/docs/features/kv) as secondary storage for sessions, etc.
+- `useAuth()` Vue composable for easy authentication
+- `serverAuth()` composable for accessing Better Auth instance on the server
 - One click deploy on 275+ locations for free
-
-## TODO
-
-- [ ] Refresh session on signin / signup
 
 ## Setup
 
@@ -27,11 +21,13 @@ Make sure to install the dependencies with [pnpm](https://pnpm.io/installation#u
 pnpm install
 ```
 
-You can update the main text displayed by creating a `.env`:
+Copy the `.env.example` file to `.env` and update the variables with your own values.
 
-```bash
-NUXT_PUBLIC_HELLO_TEXT="Hello my world!"
-```
+The `BETTER_AUTH_SECRET` should be a random string of your choosing used by Better Auth for encryption and generating hashes.
+
+The `GITHUB_CLIENT_ID` and `GITHUB_CLIENT_SECRET` should be your GitHub OAuth application credentials (see [create an OAuth application](https://github.com/settings/applications/new)).
+
+The `NUXT_UI_PRO_LICENSE` should be your Nuxt UI Pro license key (only required for production), if you don't have one, you can purchase one [here](https://ui.nuxt.com/pro).
 
 ## Development Server
 
@@ -51,7 +47,6 @@ pnpm build
 
 ## Deploy
 
-
 Deploy the application on the Edge with [NuxtHub](https://hub.nuxt.com) on your Cloudflare account:
 
 ```bash
@@ -62,3 +57,6 @@ Then checkout your server logs, analaytics and more in the [NuxtHub Admin](https
 
 You can also deploy using [Cloudflare Pages CI](https://hub.nuxt.com/docs/getting-started/deploy#cloudflare-pages-ci).
 
+### Database Migrations
+
+Right now, we don't automatically run migrations on deployment. You can manually run them by visiting the `/api/migrate` endpoint after deploying.
