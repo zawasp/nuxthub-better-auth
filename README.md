@@ -62,3 +62,5 @@ You can also deploy using [Cloudflare Pages CI](https://hub.nuxt.com/docs/gettin
 ### Database Migrations
 
 Right now, we don't automatically run migrations on deployment. You can manually run them by visiting the `/api/migrate` endpoint after deploying.
+
+test build
